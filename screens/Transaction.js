@@ -76,7 +76,7 @@ export default class TransactionScreen extends Component {
       this.setState({ bookId: "", studentId: "" });
       // For Android users only
       // ToastAndroid.show("The book doesn't exist in the library database!", ToastAndroid.SHORT);
-      Alert.alert("The book doesn't exist in the library database!");
+      Alert.alert("El libro no existe en la base de datos de la biblioteca.");
     } else if (transactionType === "issue") {
       var isEligible = await this.checkStudentEligibilityForBookIssue(
         studentId
@@ -289,7 +289,7 @@ export default class TransactionScreen extends Component {
             <View style={styles.textinputContainer}>
               <TextInput
                 style={styles.textinput}
-                placeholder={"Book Id"}
+                placeholder={"Id del libro"}
                 placeholderTextColor={"#FFFFFF"}
                 value={bookId}
                 onChangeText={text => this.setState({ bookId: text })}
@@ -304,7 +304,7 @@ export default class TransactionScreen extends Component {
             <View style={[styles.textinputContainer, { marginTop: 25 }]}>
               <TextInput
                 style={styles.textinput}
-                placeholder={"Student Id"}
+                placeholder={"Id del alumno"}
                 placeholderTextColor={"#FFFFFF"}
                 value={studentId}
                 onChangeText={text => this.setState({ studentId: text })}
